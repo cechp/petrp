@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+	<link rel="stylesheet" href="{$basePath}/css/style.css">
+</head>
+
+<body>
+	<ul class="navig">
+    <li>
+        <a n:href="Home:" n:class="$presenter->isLinkCurrent('Home:') ? 'active'">Články</a>
+    </li>
+    {if $user->isLoggedIn()}
+        <li>
+            <a n:href="Sign:out" n:class="$presenter->isLinkCurrent('Sign:out') ? 'active'">Odhlásit</a>
+        </li>
+		<li>
+            <a n:href="Sign:up" n:class="$presenter->isLinkCurrent('Sign:up') ? 'active'">Registrace</a>
+        </li>
+    {else}
+        <li>
+            <a n:href="Sign:in" n:class="$presenter->isLinkCurrent('Sign:in') ? 'active'">Přihlásit</a>
+        </li>
+        <li>
+            <a n:href="Sign:up" n:class="$presenter->isLinkCurrent('Sign:up') ? 'active'">Registrace</a>
+        </li>
+    {/if}
+	</ul>
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+	{include content}
+
+	{block scripts}
+	<script src="https://unpkg.com/nette-forms@3"></script>
+	{/block}
+</body>
+</html>

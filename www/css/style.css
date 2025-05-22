@@ -1,0 +1,101 @@
+.navig {
+    display: inline-flex;
+    gap: 10rem; 
+    list-style: none;
+    padding: 1rem 5rem;
+    margin: 0.5rem 0 0 -0.8rem;
+    background: #707070; 
+    color: #000000;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+.navig li {
+    display: flex;
+    align-items: center;
+}
+
+.navig li a {
+    color: #fff; 
+    background: #333; 
+    text-decoration: none; 
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.5s, box-shadow 0.5s;
+    display: inline-block;
+}
+
+.navig li a:hover,
+.navig li a:focus {
+    box-shadow: 0.1rem 0.1rem 0.5rem #ff6000;
+    background: #ff6000;
+}
+.navig li a.active {
+    background: #ff6000;   
+    color: #ffffff;        
+}
+
+body {
+    margin: 0 0 0 1.5rem;
+}
+
+.post {
+    background: #e6e6e6;
+    border-radius: 0.7rem;
+    box-shadow: 0 2px 8px #0001;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #333; 
+    transition: box-shadow 0.2s;
+}
+.post > div {
+    margin-left: 0.6rem;
+}
+.post:hover {
+    box-shadow: 0 4px 16px #0002;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.post h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.post h2 a {
+    background: rgba(120, 120, 120, 0.18); 
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+    color: #232946;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.post h2 a:hover {
+    color: #ff6000;
+    text-decoration: underline;
+}
+
+.create-post-btn {
+    display: inline-block;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: #333;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.5s, box-shadow 0.5s;
+    z-index: 10;
+}
+.create-post-btn:hover,
+.create-post-btn:focus {
+    background: #ff6000;
+    box-shadow: 0 4px 16px #ff6000;
+}
